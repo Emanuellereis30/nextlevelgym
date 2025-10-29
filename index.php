@@ -1,5 +1,5 @@
 <?php
-include "conexao.php"; // arquivo de conexão
+include "conexao.php"; 
 ?>
 
 
@@ -29,9 +29,8 @@ include "conexao.php"; // arquivo de conexão
         <nav class="navbar">
             <a href="index.php">Início </a>
             <a href="sobre.php">Sobre</a>
-            <a href="servicos.php">Nossos Serviços</a>
             <a href="plano.php"> Planos</a>
-            <a href="trainers">Quero ser Aluno</a>
+            <a href="cadastro.php">Quero ser Aluno</a>
             <a href="login.php">Área do Usuário</a>
         </nav>
 
@@ -44,27 +43,27 @@ include "conexao.php"; // arquivo de conexão
 
             <div class="swiper-wrapper">
 
-                <div class="swiper-slide slide" style="background: url(img/home2.jpg) no-repeat;">
+                <div class="swiper-slide slide" style="background: url(../nextlevelgym/img/academiabaner.png) no-repeat;">
                     <div class="content">
-                        <span>Seja Forte, seja fit</span>
+                        <span>Treine. Supere. Conquiste.</span>
                         <h3>Torne-se mais forte do que suas desculpas.</h3>
-                        <a href="#" class="btn">Iniciar</a>
+                        <a href="cadastro.php" class="btn">Iniciar</a>
                     </div>
                 </div>
 
-                <div class="swiper-slide slide" style="background: url(img/home1.jpg) no-repeat;">
+                <div class="swiper-slide slide" style="background: url(../nextlevelgym/img/homemmalhando.jpg) no-repeat;">
                     <div class="content">
-                        <span>Seja Forte, seja fit</span>
+                        <span>Treine. Supere. Conquiste.</span>
                         <h3>Torne-se mais forte do que suas desculpas.</h3>
-                        <a href="#" class="btn">Iniciar</a>
+                        <a href="cadastro.php" class="btn">Iniciar</a>
                     </div>
                 </div>
 
-                <div class="swiper-slide slide" style="background: url(img/musculosa1.jpg) no-repeat;">
+                <div class="swiper-slide slide" style="background: url(../nextlevelgym/img/atletafem.png) no-repeat;">
                     <div class="content">
-                        <span>Seja Forte, seja fit</span>
+                        <span>Treine. Supere. Conquiste.</span>
                         <h3>Torne-se mais forte do que suas desculpas.</h3>
-                        <a href="#" class="btn">Iniciar</a>
+                        <a href="cadastro.php" class="btn">Iniciar</a>
                     </div>
                 </div>
             </div>
@@ -110,7 +109,7 @@ include "conexao.php"; // arquivo de conexão
 
     <section id="features" class="features">
         <!--Fim serviços-->
-        <h1 class="heading"> <span>O que Oferecemos</span> </h1>
+        <h1 class="heading"> <span>Benefícios de Cuidar da Saúde</span> </h1>
 
         <div class="box-container">
             <div class="box">
@@ -120,8 +119,8 @@ include "conexao.php"; // arquivo de conexão
                 <div class="content">
                     <img src="https://i.postimg.cc/J46txFdD/icon-1.png" alt="">
                     <h3>Musculação</h3>
-                    <p>Falar Mais sobre Musculação</p>
-                    <a href="#" class="btn">Ler Mais</a>
+                    <p>A musculação não é só sobre estética é sobre força, resistência e superação pessoal.</p>
+                    <a href="https://www.tuasaude.com/beneficios-da-musculacao/" class="btn" target="_blank">Ler Mais</a>
                 </div>
             </div>
 
@@ -132,8 +131,8 @@ include "conexao.php"; // arquivo de conexão
                 <div class="content">
                     <img src="https://i.postimg.cc/5N3KRBwF/icon-2.png" alt="">
                     <h3>Homens</h3>
-                    <p>Falar Mais sobre Musculação</p>
-                    <a href="#" class="btn">Ler Mais</a>
+                    <p>Para os homens, cuidar da saúde é essencial para garantir energia, desempenho e bem-estar. </p>
+                    <a href="https://www.terra.com.br/vida-e-estilo/saude/treinos-para-homens-a-importancia-dos-exercicios-para-a-saude-masculina,c861793e96d7566b28985931b6bb659emh8fab5y.html" class="btn" target="_blank">Ler Mais</a>
                 </div>
             </div>
 
@@ -144,53 +143,13 @@ include "conexao.php"; // arquivo de conexão
                 <div class="content">
                     <img src="https://i.postimg.cc/pTjkP83x/icon-3.png" alt="">
                     <h3>Mulheres</h3>
-                    <p>Falar Mais sobre Musculação</p>
-                    <a href="#" class="btn">Ler Mais</a>
+                    <p>A prática regular de exercícios ajuda a equilibrar corpo e mente, melhora a autoestima e contribui para uma vida mais saudável.</p>
+                    <a href="https://ge.globo.com/eu-atleta/noticia/musculacao-feminina-emagrece-e-garante-beneficios-para-a-saude-da-mulher.ghtml" class="btn" target="_blank">Ler Mais</a>
                 </div>
             </div>
 
         </div>
     </section>
-
-    <section id="pricing" class="pricing">
-        <div class="information">
-            <span>Plano de Preços</span>
-            <h3>plano de preços acessível para você</h3>
-            <p>falar um pouco sobre isso</p>
-            <p> <i class="fas fa-check"></i> Exercícios de Cardio </p>
-            <p> <i class="fas fa-check"></i> Levantamento de Peso</p>
-            <p> <i class="fas fa-check"></i> Planos Alimentares </p>
-            <p> <i class="fas fa-check"></i> Acompanhamento de Resultados </p>
-            <a href="#" class="btn">Todos os Valores</a>
-        </div>
-
-        <div class="plan basic">
-            <h3>Plano Básico</h3>
-            <div class="price"><span>R$</span>90<span>/mês</span></div>
-            <div class="list">
-                <p> <i class="fas fa-check"></i> Treinador </p>
-                <p> <i class="fas fa-check"></i> Exercícios de Cardio </p>
-                <p> <i class="fas fa-check"></i> Levantamento de Peso </p>
-                <p> <i class="fas fa-check"></i> Planos Alimentares </p>
-                <p> <i class="fas fa-check"></i> Acompanhamento de Resultados </p>
-            </div>
-            <a href="plano.php" class="btn">Quero</a>
-        </div>
-
-        <div class="plan">
-            <h3>Plano Premium</h3>
-            <div class="price"><span>R$</span>110<span>/mês</span></div>
-            <div class="list">
-                <p> <i class="fas fa-check"></i> Treinador </p>
-                <p> <i class="fas fa-check"></i> Exercícios de Cardio </p>
-                <p> <i class="fas fa-check"></i> Levantamento de Peso </p>
-                <p> <i class="fas fa-check"></i> Planos Alimentares </p>
-                <p> <i class="fas fa-check"></i> Acompanhamento de Resultados </p>
-            </div>
-            <a href="plano.php" class="btn">Quero</a>
-        </div>
-    </section>
-    <!--Fim precos-->
 
     <section id="trainers" class="trainers">
         <h1 class="heading"> <span>Treinadores Especializados</span> </h1>
@@ -257,12 +216,9 @@ include "conexao.php"; // arquivo de conexão
     <!--Fim treinadores-->
 
     <section class="banner">
-        <span>Junte-se a Nós</span>
-        <h3>Ganhe até 50% de desconto</h3>
-        <p>Durante o mês de novembro, caso você se matricule, você ganhar 50% de
-            desconto na primeira mensalidade
-        </p>
-        <a href="#" class="btn">Quero</a>
+       <h4>faça parte do nosso time!</h4>
+        <h2>Mais força, mais saúde, mais você! Inscreva-se hoje e transforme sua rotina.</h2>
+        <a href="plano.php" class="btn">Saiba mais</a>
     </section>
     <!--Fim banner-->
 
@@ -331,77 +287,73 @@ include "conexao.php"; // arquivo de conexão
     <!--Fim feedback-->
 
     <section id="blogs" class="blogs">
-        <h1 class="heading"> <span>Postagens Diárias</span> </h1>
-        <div class="swiper blogs-slider">
-            <div class="swiper-wrapper">
+        <h1 class="heading"> <span>Nossos Serviços</span> </h1>
+    <div class="container">
+        <div class="services">
 
-                <div class="swiper-slide slide">
-                    <div class="image">
-                        <img src="img/post1 (4).jpeg" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="link"> <a href="#">por admin</a> <span>|</span> <a href="#">22 outubro, 2023</a>
-                        </div>
-                        <h3>fitness não é ser melhor que outra pessoa</h3>
-                        <p>Escrever um subtítulo para a postagem</p>
-                        <a href="#" class="btn">Ler Mais</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide slide">
-                    <div class="image">
-                        <img src="img/post1 (7).jpeg" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="link"> <a href="#">por admin</a> <span>|</span> <a href="#">22 outubro, 2023</a>
-                        </div>
-                        <h3>fitness não é ser melhor que outra pessoa</h3>
-                        <p>Escrever um subtítulo para a postagem</p>
-                        <a href="#" class="btn">Ler Mais</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide slide">
-                    <div class="image">
-                        <img src="img/Atleta feminina com halteres na academia _ Foto Premium.jpeg" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="link"> <a href="#">por admin</a> <span>|</span> <a href="#">22 outubro, 2023</a>
-                        </div>
-                        <h3>fitness não é ser melhor que outra pessoa</h3>
-                        <p>Escrever um subtítulo para a postagem</p>
-                        <a href="#" class="btn">Ler Mais</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide slide">
-                    <div class="image">
-                        <img src="img/post3.jpeg" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="link"> <a href="#">por admin</a> <span>|</span> <a href="#">22 outubro, 2023</a>
-                        </div>
-                        <h3>fitness não é ser melhor que outra pessoa</h3>
-                        <p>Escrever um subtítulo para a postagem</p>
-                        <a href="#" class="btn">Ler Mais</a>
-                    </div>
-                </div>
-
-                <div class="swiper-slide slide">
-                    <div class="image">
-                        <img src="img/post4.jpeg" alt="">
-                    </div>
-                    <div class="content">
-                        <div class="link"> <a href="#">por admin</a> <span>|</span> <a href="#">22 outubro, 2023</a>
-                        </div>
-                        <h3>fitness não é ser melhor que outra pessoa</h3>
-                        <p>Escrever um subtítulo para a postagem</p>
-                        <a href="#" class="btn">Ler Mais</a>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-pagination"></div>
+     <div class="service-card">
+        <img src="img/musculacao.jpeg" alt="Musculação" class="service-image" />
+        <div class="service-content">
+          <h3 class="service-title">Musculação</h3>
+          <p class="service-description">
+            Treinamento com pesos para ganho de força e massa muscular, com orientação profissional.
+          </p>
         </div>
+     </div>
+
+      <div class="service-card">
+        <img src="img/crossfit.jpg" alt="Crossfit" class="service-image" />
+        <div class="service-content">
+          <h3 class="service-title">Crossfit</h3>
+          <p class="service-description">
+            Exercícios de alta intensidade para melhorar desempenho físico, força e agilidade.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="img/funcional2.jpg" alt="Funcional" class="service-image" />
+        <div class="service-content">
+          <h3 class="service-title">Funcional</h3>
+          <p class="service-description">
+            Atividades com peso corporal, equilíbrio e coordenação para saúde e mobilidade.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="img/pilates.jpg" alt="Pilates" class="service-image" />
+        <div class="service-content">
+          <h3 class="service-title">Pilates</h3>
+          <p class="service-description">
+            Aulas para fortalecer o core, melhorar postura e reduzir dores nas articulações.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="img/personaltreino.png" alt="Personal Trainer" class="service-image" />
+        <div class="service-content">
+          <h3 class="service-title">Personalizado</h3>
+          <p class="service-description">
+            Atendimento 1:1 com plano de treino adaptado aos seus objetivos e condição física.
+          </p>
+        </div>
+      </div>
+
+      <div class="service-card">
+        <img src="img/nutricionista.jpg" alt="Nutricionista" class="service-image" />
+        <div class="service-content">
+          <h3 class="service-title">Nutricionista</h3>
+          <p class="service-description">
+            Acompanhamento profissional da sua dieta para melhorar seu desempenho e resultados.
+          </p>
+        </div>
+      </div>
+
+      </div>
+     </div>
+   </div>
     </section>
     <!--Fim blogs-->
 </main>
@@ -425,7 +377,7 @@ include "conexao.php"; // arquivo de conexão
             <p> Quarta : <i> 7:00 - 22:00 </i> </p>
             <p> Quinta : <i> 7:00 - 22:00 </i> </p>
             <p> Sexta : <i> 7:00 - 22:00 </i> </p>
-            <p> Sábado : <i> 7:00am - 10:30 </i> </p>
+            <p> Sábado : <i> 7:00am - 12:00 </i> </p>
             <p> Domingo : <i> Fechado </i> </p>
         </div>
         <div class="box">
@@ -437,17 +389,9 @@ include "conexao.php"; // arquivo de conexão
                 <a href="#" class="fab fa-facebook-f"></a>
                 <a href="#" class="fab fa-twitter"></a>
                 <a href="#" class="fab fa-linkedin"></a>
-                <a href="#" class="fab fa-pinterest"></a>
             </div>
         </div>
-        <div class="box">
-            <h3>Novidades</h3>
-            <p>Se inscreva para receber as novidades</p>
-            <form action="">
-                <input type="email" name="" class="email" placeholder="digite seu e-mail" id="">
-                <input type="submit" value="subscribe" class="btn">
-            </form>
-        </div>
+   
     </div>
 </footer>
 

@@ -22,9 +22,8 @@
         <nav class="navbar">
             <a href="index.php">Início </a>
             <a href="sobre.php">Sobre</a>
-            <a href="servicos.php">Nossos Serviços</a>
             <a href="plano.php"> Planos</a>
-            <a href="trainers">Quero ser Aluno</a>
+            <a href="cadastro">Quero ser Aluno</a>
             <a href="login.php">Área do Usuário</a>
         </nav>
 

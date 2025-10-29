@@ -264,9 +264,6 @@ section {
 }
 .features .box-container {
     display: grid;
-    /*Vai cria o auto-fit também tenta 
-    colocar quantas colunas der, expandindo os itens para caber no espaço disponível.
-    E com controle do tamanho mínimo e máximo dos itens.*/
     grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
     gap: 1.5rem;
 }
@@ -291,8 +288,6 @@ section {
 .features .box-container .box .image img {
     height: 100%;
     width: 100%;
-    /*a imagem é dimensionado para manter sua proporção e preencher 
-    toda a caixa de conteúdo do elemento*/
     object-fit: cover;
 }
 .features .box-container .box .content {
@@ -316,75 +311,6 @@ section {
     font-size: 1.5rem;
     color: #aaa;
     padding: 1rem 0;
-}
-.pricing {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(32rem, 1fr));
-    gap: 1.5rem;
-}
-
-.pricing .information span {
-    font-size: 2rem;
-    color: rgb(5, 238, 21);
-}
-.pricing .information h3 {
-    font-size: 4rem;
-    padding-top: .5rem;
-    color: #fff;
-}
-
-.pricing .information p {
-    line-height: 2;
-    padding: 1rem 0;
-    font-size: 1.4rem;
-    color: #aaa;
-}
-
-.pricing .information p i {
-    padding-right: 1rem;
-    color: rgb(5, 238, 21);
-}
-
-.pricing .plan {
-    text-align: center;
-    padding: 2rem;
-}
-
-.pricing .plan.basic {
-    background: linear-gradient(130deg, #111 93%, transparent 90%);
-}
-
-.pricing .plan h3 {
-    font-size: 2.5rem;
-    margin: 1rem 0;
-    color: #fff;
-}
-
-.pricing .plan .price {
-    font-size: 5rem;
-    font-weight: bolder;
-    color: rgb(5, 238, 21);
-}
-
-.pricing .plan .price span {
-    color: #fff;
-    font-size: 2rem;
-}
-
-.pricing .plan .list {
-    padding: 1rem 0;
-}
-
-.pricing .plan .list p {
-    line-height: 2;
-    padding: 1rem 0;
-    font-size: 1.4rem;
-    color: #aaa;
-}
-
-.pricing .plan .list p i {
-    padding-right: 1rem;
-    color: rgb(5, 238, 21);
 }
 
 .trainers .box-container {
@@ -442,32 +368,29 @@ section {
 .trainers .box-container .box .content .share a:hover {
     color: rgb(5, 238, 21);
 }
+
 .banner {
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-    url(img/FITNESS\ CENTER\ _\ GYM.jpeg) no-repeat;
+    url(../Img/musculacao.jpeg) no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
     text-align: center;
 }
-.banner span {
-    font-size: 2rem;
-    color: rgb(5, 238, 21);
-}
 
-.banner h3 {
+.banner h4 {
     padding-top: 1rem;
-    color: #fff;
+    color: #2bff00;
     text-transform: uppercase;
-    font-size: 3.5rem;
+    font-size: 4rem;
 }
 
-.banner p {
+.banner h2 {
     margin: 1rem auto;
     max-width: 60rem;
-    font-size: 1.5rem;
-    color: #aaa;
-    line-height: 2;
+    font-size: 2rem;
+    color: #b8b8b8;
+    line-height: 3rem;
 }
 .review {
     display: flex;
@@ -543,60 +466,58 @@ section {
     color: rgb(5, 238, 21);
 }
 
-.blogs .slide {
-    background: #111;
-    margin-bottom: 7rem;
-}
 
-.blogs .slide:hover .image img {
-    transform: scale(1.1);
+.container {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 0 20px;
 }
+.services {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
 
-.blogs .slide .image {
-    height: 25rem;
-    width: 100%;
-    overflow: hidden;
-}
-.blogs .slide .image img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
+.service-card {
+      background-color: #111;
+      border-radius: 0 0 50px 0;
+      width: 300px;
+      overflow: hidden;
+      box-shadow: 0 0 10px #000;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
 
-.blogs .slide .content {
-    padding: 2rem;
-}
+    .service-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(36, 255, 0, 0.4);
+    }
 
-.blogs .slide .content .link {
-    padding-bottom: 1.5rem;
-    font-size: 1.5rem;
-}
+.service-image {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
 
-.blogs .slide .content .link a {
-    color: rgb(5, 238, 21);
-}
+.service-content {
+      padding: 20px;
+      text-align: center;
+    }
 
-.blogs .slide .content .link a:hover {
-    color: #fff;
-}
+.service-title {
+      font-size: 25px;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #24ff00;
+    }
 
-.blogs .slide .content .link span {
-    color: #fff;
-    padding: 0 1rem;
-}
+.service-description {
+      font-size: 15px;
+      color: #ccc;
+      line-height: 1.4;
+    }
 
-.blogs .slide .content h3 {
-    font-size: 2rem;
-    color: #fff;
-    line-height: 1.5;
-}
-
-.blogs .slide .content p {
-    font-size: 1.5rem;
-    color: #aaa;
-    line-height: 2;
-    padding: 1rem 0;
-}
 
 .footer .box-container {
     display: grid;
@@ -665,7 +586,7 @@ section {
     color: #fff;
     text-transform: none;
 }
-/*Responsividade*/
+
 @media (max-width: 991px) {
     html {
         font-size: 55%;

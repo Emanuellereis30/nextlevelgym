@@ -19,11 +19,10 @@
 
         <nav class="navbar">
             <a href="index.php">Início </a>
-            <a href="#about">Sobre</a>
-            <a href="servicos.php">Nossos Serviços</a>
+            <a href="sobre.php">Sobre</a>
             <a href="plano.php"> Planos</a>
-            <a href="trainers">Quero ser Aluno</a>
-          <a href="login.php">Área do Usuário</a>
+            <a href="cadastro.php">Quero ser Aluno</a>
+          <a href="admin.php">Área do Usuário</a>
         </nav>
 
     </header>
@@ -53,7 +52,7 @@
         <li>✔ 1 aula coletiva/semana</li>
         <li>✔ Acesso a uma unidade</li>
       </ul>
-      <form action="contratar.php" method="post">
+      <form action="cadastro.php" method="post">
         <input type="hidden" name="plano" value="Básico">
         <button type="submit" class="btn-contratar">Matricule-se</button>
       </form>
@@ -79,9 +78,9 @@
         <li>✔ 3 aulas coletivas/semana</li>
         <li>✔ Consulta com Nutricionista</li>
         <li>✔ Acesso a todas as unidades do seu estado.</li>
-        <li>✔ Leve 5 amigos com você por mês</li>
+        <li>✔ Leve 3 amigos com você por mês</li>
       </ul>
-      <form action="contratar.php" method="post">
+      <form action="pagamentos.php" method="post">
         <input type="hidden" name="plano" value="Intermediário">
         <button type="submit" class="btn-contratar destaque-btn">Matricule-se</button>
       </form>
@@ -136,7 +135,7 @@
             <p> Quarta : <i> 7:00 - 22:00 </i> </p>
             <p> Quinta : <i> 7:00 - 22:00 </i> </p>
             <p> Sexta : <i> 7:00 - 22:00 </i> </p>
-            <p> Sábado : <i> 7:00am - 10:30 </i> </p>
+            <p> Sábado : <i> 7:00am - 12:00 </i> </p>
             <p> Domingo : <i> Fechado </i> </p>
         </div>
         <div class="box">

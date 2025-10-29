@@ -1,32 +1,67 @@
-CREATE DATABASE nextlevelgym;
-USE nextlevelgym;
 
--- Alunos
-CREATE TABLE users (
+CREATE DATABASE nextlevel;
+USE nextlevel;
+
+
+CREATE TABLE usuarios (
   id INT AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   email VARCHAR(100) UNIQUE NOT NULL,
   password VARCHAR(255) NOT NULL,
   plan VARCHAR(50) NOT NULL,
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  reset_token_hash CHAR(64) DEFAULT NULL,
+  reset_expires_at DATETIME DEFAULT NULL
 );
 
--- Check-ins
+
 CREATE TABLE checkins (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  user_id INT NOT NULL,
+  usuarios_id INT NOT NULL,
   checkin_time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+  FOREIGN KEY (usuarios_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
 
--- Administradores
+
 CREATE TABLE admins (
   id INT AUTO_INCREMENT PRIMARY KEY,
-  username VARCHAR(100) UNIQUE NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
   password VARCHAR(255) NOT NULL
 );
 
--- Admin padrão (senha: admin123)
-INSERT INTO admins (username, password) VALUES ('admin', MD5('admin123'));
+CREATE TABLE agendamentos (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    aluno_id INT NOT NULL,
+    modalidade VARCHAR(50) NOT NULL,
+    data_aula DATE NOT NULL,
+    horario TIME NOT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (aluno_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
 
 
+CREATE TABLE pagamentos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  user_id INT NOT NULL,                    
+  plan VARCHAR(50) NOT NULL,             
+  valor DECIMAL(10,2) NOT NULL,
+  data_pagamento DATE,
+  status ENUM('PAGO', 'PENDENTE', 'ATRASADO') DEFAULT 'PENDENTE',
+  metodo ENUM('cartao') DEFAULT 'cartao', 
+  FOREIGN KEY (user_id) REFERENCES usuarios(id) ON DELETE CASCADE
+);
+
+
+
+CREATE TABLE planos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nome VARCHAR(50) UNIQUE NOT NULL,
+  descricao TEXT,
+  preco DECIMAL(10,2) NOT NULL
+);
+
+
+INSERT INTO planos (nome, descricao, preco) VALUES
+('Básico', 'Acesso limitado', 99.90),
+('Intermediário', 'Mais benefícios', 139.90),
+('Premium', 'Acesso completo', 249.90);

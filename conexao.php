@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "autofit";
+$dbname = "nextlevel";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

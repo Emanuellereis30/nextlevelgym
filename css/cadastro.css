@@ -1,0 +1,135 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #000 0%, #111 100%);
+    color: #fff;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.form-container {
+    background: #111;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+h2 {
+    grid-column: span 2;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #32CD32;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    color: #32CD32;
+    margin-bottom: 15px;
+    font-size: 20px;
+    grid-column: span 2;
+}
+
+/* Campos de formulário */
+input, select {
+    width: 200%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 2px solid #222;
+    background: #111;
+    color: #fff;
+    font-size: 16px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+input:focus, select:focus {
+    border: 2px solid #32CD32;
+    box-shadow: 0 0 8px #32CD32;
+    outline: none;
+}
+
+/* Botão */
+button {
+    grid-column: span 2;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #32CD32 0%, #28a428 100%);
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #28a428 0%, #1fa01f 100%);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* Mensagem de erro ou sucesso */
+.msg {
+    grid-column: span 2;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Botão voltar */
+.botao-voltar {
+    grid-column: span 2;
+    margin-top: 15px;
+}
+
+.btn-voltar {
+    color: #22c522;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    display: inline-block;
+}
+
+.btn-voltar:hover {
+    color: #097918;
+    text-decoration: underline;
+}
+
+/* Animação */
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* Responsivo */
+@media screen and (max-width: 768px){
+    .form-container {
+        grid-template-columns: 1fr;
+    }
+}

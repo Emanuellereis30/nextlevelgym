@@ -12,7 +12,7 @@
     }
 
     header h1 {
-      color: #00ff88;
+      color: rgb(5, 238, 21);
       margin: 0;
     }
 
@@ -27,7 +27,7 @@
     }
 
     .historia h2, .unidades h2 {
-      color: #00ff88;
+      color:rgb(5, 238, 21);
       font-size: 32px;
       margin-bottom: 20px;
     }
@@ -57,7 +57,7 @@
     }
 
     .unidade h3 {
-      color: #00ff88;
+      color:rgb(5, 238, 21);
       margin-bottom: 10px;
     }
 

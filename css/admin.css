@@ -1,0 +1,315 @@
+    /* Geral */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #121212;
+        color: #fff;
+        margin: 0;
+    }
+
+    /* Navbar */
+    .navbar {
+        background-color: #1f1f1f;
+        padding: 15px 20px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+
+    .navbar img.logo {
+        height: 80px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .navbar img.logo:hover {
+        transform: scale(1.05);
+    }
+
+    .navbar h1 {
+        color: #10b935;
+        font-size: 22px;
+        margin: 0;
+    }
+
+    /* Container */
+    .container {
+        padding: 20px;
+    }
+
+    /* Botões */
+    button {
+        padding: 8px 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: bold;
+        transition: all 0.2s;
+    }
+
+    .add { 
+        background-color: #10b918; 
+        color: white; 
+        margin-bottom: 10px; 
+    }
+
+    .add:hover { 
+        background-color: #0f9a2d; 
+    }
+
+
+    .edit { 
+        background-color: #14294bc9; 
+        color: white; 
+    }
+
+    .edit:hover { 
+        background-color: #2563eb;
+     
+    }
+
+    .delete { 
+        background-color: #501313c2; 
+        color: white;
+     
+    }
+    .delete:hover { 
+        background-color: #dc2626; 
+    }
+    
+
+    /* Tabela */
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #1f1f1f;
+        border-radius: 6px;
+        overflow: hidden;
+    }
+
+    th, td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #111111;
+        color: #1eb910;
+    }
+
+    tr:hover { background-color: #272727; }
+
+    /* Modal */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 100;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.75);
+        backdrop-filter: blur(4px);
+        transition: all 0.3s ease;
+    }
+
+    .modal-content {
+        background-color: #1a1a1a;
+        margin: 8% auto;
+        padding: 30px 25px;
+        border-radius: 12px;
+        width: 400px;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+        color: #fff;
+        position: relative;
+        transform: translateY(-50px);
+        opacity: 0;
+        transition: all 0.3s ease;
+    }
+
+    .modal.show .modal-content {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .modal h2 {
+        margin-top: 0;
+        color: #10b91e;
+        font-size: 24px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+.modal input, .modal select {
+    width: 100%;
+    height: 45px;        /* mesma altura para todos */
+    padding: 0 15px;     /* padding horizontal */
+    margin: 10px 0;      /* margem uniforme */
+    border-radius: 8px;
+    border: none;
+    background-color: #272727;
+    color: #fff;
+    font-size: 16px;
+    transition: all 0.2s;
+    box-sizing: border-box; /* garante que padding não aumente a largura */
+}
+
+
+    .modal input:focus, .modal select:focus {
+        outline: none;
+        box-shadow: 0 0 8px #10b91e;
+    }
+
+    .modal input::placeholder { color: #bbb; }
+
+    .close {
+        position: absolute;
+        top: 15px;
+        right: 20px;
+        font-size: 26px;
+        cursor: pointer;
+        color: #24b910;
+        transition: color 0.2s;
+    }
+
+    .close:hover { color: #0f9a2d; }
+
+    button.add {
+        width: 100%;
+        padding: 12px;
+        border-radius: 8px;
+        font-size: 16px;
+        background-color: #16b910;
+        color: white;
+        font-weight: bold;
+        border: none;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: all 0.3s ease;
+    }
+
+    button.add:hover {
+        background-color: #0c7515;
+        transform: translateY(-2px);
+    }
+
+
+
+
+.form-agendamento {
+    background: #0d0d0d;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 50, 0.2);
+    border: 1px solid #007a21;
+}
+
+.form-agendamento label {
+    grid-column: span 2;
+    color: #fdfffe;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.form-agendamento select,
+.form-agendamento input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #333;
+    background: #111;
+    color: #fff;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.form-agendamento select:focus,
+.form-agendamento input:focus {
+    border-color: #00ff44;
+    box-shadow: 0 0 6px #00ff44;
+}
+
+
+.form-agendamento button {
+    grid-column: span 2;
+    background: #2bfa02f1;
+    color: #000000;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.form-agendamento button:hover {
+    background: #008b00;
+    transform: translateY(-2px);
+}
+
+
+
+.container h2 {
+    color: #ffffff;
+    margin-top: 40px;
+    border-bottom: 2px solid #005700;
+    padding-bottom: 5px;
+}
+
+.container table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 50, 0.15);
+}
+
+.container table th {
+    background-color: #0a0a0a;
+    color: #2afd00;
+    padding: 12px;
+    text-align: left;
+    font-size: 15px;
+}
+
+.container table td {
+    padding: 12px;
+    color: #fff;
+    border-top: 1px solid #222;
+}
+
+.container table tr:nth-child(even) {
+    background-color: #161616;
+}
+
+.container table tr:hover {
+    background-color: #1e1e1e;
+}
+
+
+@media (max-width: 768px) {
+    .form-agendamento {
+        grid-template-columns: 1fr;
+    }
+
+    .form-agendamento button {
+        grid-column: 1;
+    }
+
+    .container table th, 
+    .container table td {
+        font-size: 14px;
+        padding: 10px;
+    }
+}
