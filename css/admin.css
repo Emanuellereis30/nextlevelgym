@@ -1,4 +1,4 @@
-    /* Geral */
+
     body {
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         background-color: #121212;
@@ -6,7 +6,7 @@
         margin: 0;
     }
 
-    /* Navbar */
+  
     .navbar {
         background-color: #1f1f1f;
         padding: 15px 20px;
@@ -35,12 +35,12 @@
         margin: 0;
     }
 
-    /* Container */
+   
     .container {
         padding: 20px;
     }
 
-    /* Botões */
+    
     button {
         padding: 8px 16px;
         border: none;
@@ -81,7 +81,7 @@
     }
     
 
-    /* Tabela */
+  
     table {
         width: 100%;
         border-collapse: collapse;
@@ -145,16 +145,16 @@
 
 .modal input, .modal select {
     width: 100%;
-    height: 45px;        /* mesma altura para todos */
-    padding: 0 15px;     /* padding horizontal */
-    margin: 10px 0;      /* margem uniforme */
+    height: 45px;        
+    padding: 0 15px;     
+    margin: 10px 0;      
     border-radius: 8px;
     border: none;
     background-color: #272727;
     color: #fff;
     font-size: 16px;
     transition: all 0.2s;
-    box-sizing: border-box; /* garante que padding não aumente a largura */
+    box-sizing: border-box; 
 }
 
 
@@ -198,62 +198,64 @@
 
 
 
-
 .form-agendamento {
-    background: #0d0d0d;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: #1b1b1b;
+    padding: 15px 20px;
+    border-radius: 8px;
     margin: 20px 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px 20px;
-    box-shadow: 0 0 10px rgba(0, 255, 50, 0.2);
-    border: 1px solid #007a21;
+    border: 1px solid #2e2e2e;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 15px;
 }
+
 
 .form-agendamento label {
-    grid-column: span 2;
-    color: #fdfffe;
-    font-weight: bold;
-    margin-bottom: 5px;
+    color: #1eff00;
+    font-weight: 500;
+    font-size: 13px;
+    white-space: nowrap;
+    margin-right: 5px;
 }
+
 
 .form-agendamento select,
 .form-agendamento input {
-    width: 100%;
-    padding: 10px;
-    border-radius: 6px;
-    border: 1px solid #333;
-    background: #111;
+    padding: 8px 10px;
+    border-radius: 5px;
+    border: 1px solid #2e2e2e;
+    background-color: #121212;
     color: #fff;
-    font-size: 15px;
+    font-size: 13px;
     outline: none;
-    transition: 0.2s;
+    transition: border 0.2s ease;
+    min-width: 150px;
 }
 
 .form-agendamento select:focus,
 .form-agendamento input:focus {
-    border-color: #00ff44;
-    box-shadow: 0 0 6px #00ff44;
+    border-color: #10b935;
 }
 
 
 .form-agendamento button {
-    grid-column: span 2;
-    background: #2bfa02f1;
-    color: #000000;
-    font-weight: bold;
+    background-color: #16b910;
+    color: #fff;
+    font-weight: 500;
     border: none;
-    border-radius: 8px;
-    padding: 12px;
+    border-radius: 6px;
+    padding: 10px;
     cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
+    font-size: 14px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    grid-column: 1 / -1; 
 }
 
 .form-agendamento button:hover {
-    background: #008b00;
-    transform: translateY(-2px);
+    background-color: #0c7515;
+    transform: translateY(-1px);
 }
 
 
@@ -295,6 +297,32 @@
 
 .container table tr:hover {
     background-color: #1e1e1e;
+}
+
+
+#filtro-aluno {
+    width: 300px;              
+    padding: 10px 15px;         
+    margin-bottom: 20px;        
+    border: 2px solid #015213;  
+    border-radius: 8px;         
+    background-color: #121212;
+    color: #e0e0e0;            
+    font-size: 16px;          
+    transition: all 0.3s ease;  
+}
+
+
+#filtro-aluno::placeholder {
+    color: #fafafa;        
+    opacity: 0.7;
+}
+
+
+#filtro-aluno:focus {
+    outline: none;
+    border-color: #00cc55;    
+    box-shadow: 0 0 8px #00ff66;
 }
 
 

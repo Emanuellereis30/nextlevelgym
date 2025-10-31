@@ -80,7 +80,7 @@
         <li>✔ Acesso a todas as unidades do seu estado.</li>
         <li>✔ Leve 3 amigos com você por mês</li>
       </ul>
-      <form action="pagamentos.php" method="post">
+      <form action="cadastro.php" method="post">
         <input type="hidden" name="plano" value="Intermediário">
         <button type="submit" class="btn-contratar destaque-btn">Matricule-se</button>
       </form>
@@ -108,7 +108,7 @@
         <li>✔ Área VIP com vestiário</li>
         <li>✔ Acesso a todas as unidades do Brasil</li>
       </ul>
-      <form action="contratar.php" method="post">
+      <form action="cadastro.php" method="post">
         <input type="hidden" name="plano" value="Premium">
         <button type="submit" class="btn-contratar">Matricule-se</button>
       </form>

@@ -14,13 +14,46 @@ $sql_checkins = "
 ";
 $result_checkins = $conn->query($sql_checkins);
 
-// Agendamentos
+// CRUD Agendamentos
+if(isset($_POST['adicionar'])){
+    $aluno_id = $_POST['aluno_id'];
+    $modalidade = $_POST['modalidade'];
+    $data_aula = $_POST['data_aula'];
+    $horario = $_POST['horario'];
+
+    $stmt = $conn->prepare("INSERT INTO agendamentos (aluno_id, modalidade, data_aula, horario) VALUES (?, ?, ?, ?)");
+    $stmt->bind_param("isss", $aluno_id, $modalidade, $data_aula, $horario);
+    $stmt->execute();
+    header("Location: ".$_SERVER['PHP_SELF']);
+}
+
+if(isset($_POST['alterar'])){
+    $id = $_POST['id'];
+    $modalidade = $_POST['modalidade'];
+    $data_aula = $_POST['data_aula'];
+    $horario = $_POST['horario'];
+
+    $sql = "UPDATE agendamentos SET 
+            modalidade = COALESCE(NULLIF('$modalidade',''), modalidade),
+            data_aula = COALESCE(NULLIF('$data_aula',''), data_aula),
+            horario = COALESCE(NULLIF('$horario',''), horario)
+            WHERE id = $id";
+    $conn->query($sql);
+    header("Location: ".$_SERVER['PHP_SELF']);
+}
+
+if(isset($_POST['cancelar'])){
+    $id = $_POST['id'];
+    $conn->query("DELETE FROM agendamentos WHERE id = $id");
+    header("Location: ".$_SERVER['PHP_SELF']);
+}
+
+// Consulta agendamentos
 $sql_agendamentos = "
-    SELECT a.id, u.name AS aluno, a.modalidade, a.data_aula, a.horario, a.criado_em
-    FROM agendamentos a
-    JOIN usuarios u ON a.aluno_id = u.id
-    ORDER BY a.data_aula DESC
-";
+SELECT a.id, u.name AS aluno, a.modalidade, a.data_aula, a.horario, a.criado_em
+FROM agendamentos a
+JOIN usuarios u ON a.aluno_id = u.id
+ORDER BY a.data_aula DESC";
 $result_agendamentos = $conn->query($sql_agendamentos);
 ?>
 
@@ -44,6 +77,7 @@ $result_agendamentos = $conn->query($sql_agendamentos);
 
     <!-- Alunos -->
     <h2>Alunos</h2>
+    <input type="text" id="filtro-aluno" placeholder="Pesquisar por nome..." onkeyup="filtrarAlunos()">
     <button class="add" onclick="openModal()">+ Novo Aluno</button>
     <table>
         <tr>
@@ -97,7 +131,9 @@ $result_agendamentos = $conn->query($sql_agendamentos);
 
     <!-- Agendamentos -->
     <h2>Agendamentos</h2>
-    <form method="POST" action="agendar_aula.php" class="form-agendamento">
+
+    <!-- Form adicionar -->
+    <form method="POST" class="form-agendamento">
         <label for="aluno_id">Aluno:</label>
         <select name="aluno_id" required>
             <option value="">Selecione o aluno</option>
@@ -125,9 +161,10 @@ $result_agendamentos = $conn->query($sql_agendamentos);
         <label for="horario">Horário:</label>
         <input type="time" name="horario" required>
 
-        <button type="submit" class="add">Agendar Aula</button>
+        <button type="submit" name="adicionar" class="add">Agendar Aula</button>
     </form>
 
+    <!-- Tabela de agendamentos -->
     <table>
         <tr>
             <th>ID</th>
@@ -136,6 +173,7 @@ $result_agendamentos = $conn->query($sql_agendamentos);
             <th>Data</th>
             <th>Horário</th>
             <th>Criado em</th>
+            <th>Ações</th>
         </tr>
         <?php while($ag = $result_agendamentos->fetch_assoc()): ?>
         <tr>
@@ -145,6 +183,13 @@ $result_agendamentos = $conn->query($sql_agendamentos);
             <td><?= $ag['data_aula'] ?></td>
             <td><?= $ag['horario'] ?></td>
             <td><?= $ag['criado_em'] ?></td>
+            <td>
+                <button class="edit" onclick="openEditAgendamento('<?= $ag['id'] ?>','<?= addslashes($ag['modalidade']) ?>','<?= $ag['data_aula'] ?>','<?= $ag['horario'] ?>')">✏️ Editar</button>
+                <form method="POST" style="display:inline;">
+                    <input type="hidden" name="id" value="<?= $ag['id'] ?>">
+                    <button type="submit" name="cancelar" class="delete" onclick="return confirm('Deseja realmente cancelar?')">🗑️ Cancelar</button>
+                </form>
+            </td>
         </tr>
         <?php endwhile; ?>
     </table>
@@ -168,6 +213,24 @@ $result_agendamentos = $conn->query($sql_agendamentos);
                 <option value="Anual">Plano Premium</option>
             </select>
             <button type="submit" class="add" id="modal-submit">Cadastrar</button>
+        </form>
+    </div>
+</div>
+
+<!-- Modal Editar Agendamento -->
+<div id="modal-edit-agendamento" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeEditAgendamento()">&times;</span>
+        <h2>Editar Agendamento</h2>
+        <form method="POST">
+            <input type="hidden" name="id" id="edit-id">
+            <label>Modalidade:</label>
+            <input type="text" name="modalidade" id="edit-modalidade">
+            <label>Data:</label>
+            <input type="date" name="data_aula" id="edit-data">
+            <label>Horário:</label>
+            <input type="time" name="horario" id="edit-horario">
+            <button type="submit" name="alterar" class="add">Salvar Alterações</button>
         </form>
     </div>
 </div>
@@ -217,10 +280,47 @@ function closeModal() {
     setTimeout(() => modal.style.display = "none", 300);
 }
 
-window.onclick = function(event) {
-    const modal = document.getElementById('modal');
-    if (event.target == modal) closeModal();
+function openEditAgendamento(id, modalidade, data, horario){
+    document.getElementById('edit-id').value = id;
+    document.getElementById('edit-modalidade').value = modalidade;
+    document.getElementById('edit-data').value = data;
+    document.getElementById('edit-horario').value = horario;
+
+    const modal = document.getElementById('modal-edit-agendamento');
+    modal.style.display = 'block';
+    setTimeout(() => modal.classList.add('show'), 10);
 }
+
+function closeEditAgendamento(){
+    const modal = document.getElementById('modal-edit-agendamento');
+    modal.classList.remove('show');
+    setTimeout(() => modal.style.display = "none", 300);
+}
+
+window.onclick = function(event) {
+    const modalAluno = document.getElementById('modal');
+    const modalAgendamento = document.getElementById('modal-edit-agendamento');
+    if(event.target == modalAluno) closeModal();
+    if(event.target == modalAgendamento) closeEditAgendamento();
+}
+
+
+
+function filtrarAlunos() {
+    const input = document.getElementById('filtro-aluno');
+    const filter = input.value.toLowerCase();
+    const table = document.querySelector('.container table'); // pega a primeira tabela (Alunos)
+    const tr = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < tr.length; i++) { // começa em 1 para pular o cabeçalho
+        const td = tr[i].getElementsByTagName('td')[1]; // coluna do nome
+        if (td) {
+            const txtValue = td.textContent || td.innerText;
+            tr[i].style.display = txtValue.toLowerCase().includes(filter) ? "" : "none";
+        }
+    }
+}
+
 </script>
 
 </body>

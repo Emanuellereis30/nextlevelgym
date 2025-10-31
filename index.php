@@ -51,7 +51,7 @@ include "conexao.php";
                     </div>
                 </div>
 
-                <div class="swiper-slide slide" style="background: url(../nextlevelgym/img/homemmalhando.jpg) no-repeat;">
+                <div class="swiper-slide slide" style="background: url(../nextlevelgym/img/homemtreino.jpg) no-repeat;">
                     <div class="content">
                         <span>Treine. Supere. Conquiste.</span>
                         <h3>Torne-se mais forte do que suas desculpas.</h3>
@@ -59,7 +59,7 @@ include "conexao.php";
                     </div>
                 </div>
 
-                <div class="swiper-slide slide" style="background: url(../nextlevelgym/img/atletafem.png) no-repeat;">
+                <div class="swiper-slide slide" style="background: url(../nextlevelgym/img/musculosa1.jpg) no-repeat;">
                     <div class="content">
                         <span>Treine. Supere. Conquiste.</span>
                         <h3>Torne-se mais forte do que suas desculpas.</h3>
@@ -114,7 +114,7 @@ include "conexao.php";
         <div class="box-container">
             <div class="box">
                 <div class="image">
-                    <img src="img/casal na academia.jpg" alt="">
+                    <img src="img/casalacademia.jpg" alt="">
                 </div>
                 <div class="content">
                     <img src="https://i.postimg.cc/J46txFdD/icon-1.png" alt="">
@@ -126,7 +126,7 @@ include "conexao.php";
 
             <div class="box second">
                 <div class="image">
-                    <img src="img/man-2604149_1920.jpg" alt="">
+                    <img src="img/homemmalhando.jpg" alt="">
                 </div>
                 <div class="content">
                     <img src="https://i.postimg.cc/5N3KRBwF/icon-2.png" alt="">
@@ -138,7 +138,7 @@ include "conexao.php";
 
             <div class="box">
                 <div class="image">
-                    <img src="img/musculosa1.jpg" alt="">
+                    <img src="img/mulhertreino.jpg" alt="">
                 </div>
                 <div class="content">
                     <img src="https://i.postimg.cc/pTjkP83x/icon-3.png" alt="">
@@ -152,60 +152,50 @@ include "conexao.php";
     </section>
 
     <section id="trainers" class="trainers">
-        <h1 class="heading"> <span>Treinadores Especializados</span> </h1>
+        <h1 class="heading"> <span>Nossos Profissionais</span> </h1>
         <div class="box-container">
 
-            <div class="box">
-                <img src="img/personal1.jpeg" alt="">
+           <div class="box">
+                <img src="img/personal2.jpeg" alt="">
                 <div class="content">
                     <span>Personal</span>
-                    <h3>Renato Souza</h3>
+                    <h3>João Paulo</h3>
                     <div class="share">
-                        <a href="#" class="fab fa-facebook-f"></a>
-                        <a href="#" class="fab fa-twitter"></a>
-                        <a href="#" class="fab fa-pinterest"></a>
-                        <a href="#" class="fab fa-linkedin"></a>
+                        <a href="#" class="fab fa-instagram"></a>
                     </div>
                 </div>
             </div>
+
+
+            <div class="box">
+                <img src="img/nutri_homem.jpg" alt="">
+                <div class="content">
+                    <span>Nutricionista</span>
+                    <h3>Renato Souza</h3>
+                    <div class="share">
+                        <a href="#" class="fab fa-instagram"></a>
+                    </div>
+                </div>
+            </div>
+
             <div class="box">
                 <img src="img/Personalmulher1.jpeg" alt="">
                 <div class="content">
                     <span>Personal</span>
                     <h3>Marcela Silva</h3>
                     <div class="share">
-                        <a href="#" class="fab fa-facebook-f"></a>
-                        <a href="#" class="fab fa-twitter"></a>
-                        <a href="#" class="fab fa-pinterest"></a>
-                        <a href="#" class="fab fa-linkedin"></a>
+                        <a href="#" class="fab fa-instagram"></a>
                     </div>
                 </div>
             </div>
 
             <div class="box">
-                <img src="img/personal2.jpeg" alt="">
+                <img src="img/nutri.jpg" alt="">
                 <div class="content">
-                    <span>Personal</span>
-                    <h3>João Paulo</h3>
-                    <div class="share">
-                        <a href="#" class="fab fa-facebook-f"></a>
-                        <a href="#" class="fab fa-twitter"></a>
-                        <a href="#" class="fab fa-pinterest"></a>
-                        <a href="#" class="fab fa-linkedin"></a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="box">
-                <img src="img/Personalmulher2.jpeg" alt="">
-                <div class="content">
-                    <span>Personal</span>
+                    <span>Nutricionista</span>
                     <h3>Luiza Botelho</h3>
                     <div class="share">
-                        <a href="#" class="fab fa-facebook-f"></a>
-                        <a href="#" class="fab fa-twitter"></a>
-                        <a href="#" class="fab fa-pinterest"></a>
-                        <a href="#" class="fab fa-linkedin"></a>
+                        <a href="#" class="fab fa-instagram"></a>
                     </div>
                 </div>
             </div>

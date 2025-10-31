@@ -200,6 +200,11 @@ body {
     color: #30c522;
 }
 
+.esqueci-senha {
+    display: block;
+    margin-top: 15px; /* Aumente esse valor até ficar bom */
+}
+
 
 
 @media (max-width: 400px) {
