@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -14,147 +13,288 @@ body {
 
 
 .header {
-    background-color: #000000;
-    color: rgb(0, 255, 21);
+    background-color: #000;
+    color: #00ff15;
     padding: 20px 40px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
 }
 
 .header .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #00ff15;
     font-size: 1.8rem;
     font-weight: bold;
-    color:rgb(5, 238, 21);
-    text-decoration: none;
-}
-
-.header nav a {
-    color: #eee;
-    margin-left: 20px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s;
-}
-
-.header nav a:hover {
-    color: rgb(5, 238, 21);
-}
-
-
-
-/* --- LOGO DA ACADEMIA --- */
-.header .logo {
-  display: flex;
-  align-items: center;
-  text-decoration: none;
-  color: rgb(5, 238, 21);
-  font-size: 1.8rem;
-  font-weight: bold;
-  font-family: 'Poppins', sans-serif;
 }
 
 .header .logo-img {
-  width: 100px; /* diminui o tamanho */
-  height: 100px;
-  object-fit: contain;
-  margin-right: 10px;
-  transition: transform 0.3s ease;
-}
-
-.header .logo-img:hover {
-  transform: scale(1.1);
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 10px;
 }
 
 .header .logo span strong {
-  color: #00ff15; /* destaca o “Next” */
+    color: #00ff15;
 }
 
 
-
-
-.about {
+.area-aluno {
     display: flex;
     justify-content: center;
-    padding: 50px 20px;
+    padding: 40px 20px;
 }
 
-.about .content {
-    background-color: #1a1a1a; 
-    padding: 40px;
-    border-radius: 12px;
+.card-unico {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
     width: 100%;
-    max-width: 700px;
-    box-shadow: 0 10px 25px rgba(0, 255, 0, 0.2); 
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
 }
 
-.about .content h3.title {
-    font-size: 1.8rem;
-    margin-bottom: 15px;
-    color: rgb(5, 238, 21);
+.card-unico h2 {
+    color: #00ff15;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
-.about .content p {
-    font-size: 1rem;
-    margin-bottom: 15px;
+.secao {
+    margin-bottom: 25px;
+}
+
+.secao h3 {
+    color: #00ff15;
+    margin-bottom: 10px;
+}
+
+.secao p, .secao li {
     color: #eee;
+    font-size: 1rem;
+    margin-bottom: 5px;
 }
 
-.about .content b {
-    color: rgb(5, 238, 21);
+.secao ul {
+    list-style: none;
+    padding-left: 0;
 }
 
-
-.btn {
+.secao ul li::before {
+    content: "•";
+    color: #00ff15;
     display: inline-block;
-    padding: 12px 25px;
-    margin: 10px 5px 20px 0;
-    background-color: rgb(5, 238, 21);
+    width: 1em;
+    margin-left: -1em;
+}
+
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #00ff15;
     color: #000;
     font-weight: bold;
-    text-decoration: none;
     border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
     transition: all 0.3s;
 }
 
-.btn:hover {
-    background-color:rgb(2, 128, 10);
+.btn-primary:hover {
+    background-color: #009900;
     color: #fff;
 }
 
 
-.about .content p.checkin {
-    background-color: #000;
-    border-left: 4px solid rgb(5, 238, 21);
-    padding: 10px 15px;
+.secao input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
     border-radius: 6px;
-    margin-bottom: 10px;
-    font-size: 0.95rem;
+    border: none;
+    outline: none;
+    background-color: #222;
     color: #eee;
 }
 
+
 .checkin-msg {
-    margin: 15px 0;
+    margin-top: 10px;
     font-weight: bold;
     color: #00ff15;
 }
 
 
-@media (max-width: 768px) {
-    .header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .header nav {
-        margin-top: 10px;
-    }
-
-    .about {
+@media(max-width: 768px){
+    .card-unico {
         padding: 20px;
     }
-
-    .about .content {
-        padding: 25px;
-    }
 }
+
+/*agendamentos*/
+.agendamentos {
+  background: #1a1a1a;
+  border: 1px solid #016109;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 0 10px rgba(0,255,20,0.1);
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+.agendamentos:hover {
+  box-shadow: 0 0 15px rgba(0,255,50,0.25);
+}
+
+.form-agendar {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 10px;
+}
+
+.form-agendar input {
+  background: #111;
+  border: 1px solid #01c011;
+  color: #eee;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.form-agendar input:focus {
+  outline: none;
+  box-shadow: 0 0 10px #00ff15;
+}
+
+.btn-primary {
+  background: #00ff15;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn-primary:hover {
+  background: #00cc12;
+  transform: scale(1.03);
+}
+
+/* Lista de agendamentos */
+.lista-agendamentos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.agendamento-item {
+  background: #111;
+  border: 1px solid #333;
+  padding: 15px;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+.agendamento-item:hover {
+  border-color: #009e0d;
+}
+
+.agendamento-info {
+  margin-bottom: 8px;
+}
+.agendamento-info strong {
+  color: #00ff15;
+}
+
+.form-editar {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+}
+
+.form-editar input {
+  background: #1a1a1a;
+  border: 1px solid #00ff15;
+  color: #fff;
+  border-radius: 6px;
+  padding: 6px;
+}
+
+.botoes-editar {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-acao {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn-acao.editar {
+  background: #02ff179a;
+  color: #ffffff;
+}
+.btn-acao.editar:hover {
+  background: #01fc15;
+}
+
+.btn-acao.excluir {
+  background: rgba(255, 1, 1, 0.534);
+  color: #fff;
+}
+.btn-acao.excluir:hover {
+  background: rgb(235, 0, 0);
+}
+
+.sem-agendamento {
+  text-align: center;
+  color: #aaa;
+  font-style: italic;
+}
+
+
+
+/* Status da Mensalidade */
+.card-status {
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: bold;
+}
+.card-status span {
+    font-size: 1.2em;
+}
+
+
+
+
+.card-status {
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.card-status.pago { background-color: #4CAF50; }
+.card-status.pendente { background-color: #FF9800; }
+.card-status.atrasado { background-color: #F44336; }

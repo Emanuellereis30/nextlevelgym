@@ -40,6 +40,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
     $stmt->close();
     $conn->close();
-    exit; // importante: encerra o script aqui
+    exit; 
 }
 ?>

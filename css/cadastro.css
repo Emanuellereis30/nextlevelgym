@@ -1,4 +1,4 @@
-/* Reset básico */
+
 * {
     margin: 0;
     padding: 0;
@@ -49,7 +49,7 @@ h3 {
     grid-column: span 2;
 }
 
-/* Campos de formulário */
+
 input, select {
     width: 200%;
     padding: 12px 15px;
@@ -127,7 +127,7 @@ button:hover {
     to {opacity: 1; transform: translateY(0);}
 }
 
-/* Responsivo */
+
 @media screen and (max-width: 768px){
     .form-container {
         grid-template-columns: 1fr;

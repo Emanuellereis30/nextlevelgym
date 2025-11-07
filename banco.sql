@@ -11,7 +11,11 @@ CREATE TABLE usuarios (
   plan VARCHAR(50) NOT NULL,
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   reset_token_hash CHAR(64) DEFAULT NULL,
-  reset_expires_at DATETIME DEFAULT NULL
+  reset_expires_at DATETIME DEFAULT NULL,
+  tentativas int(11) DEFAULT 0,
+  bloqueado tinyint(1) DEFAULT 0,
+  ultimo_erro datetime DEFAULT NULL,
+  meta_treino VARCHAR(255) DEFAULT NULL;
 );
 
 
@@ -38,6 +42,9 @@ CREATE TABLE agendamentos (
     criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (aluno_id) REFERENCES usuarios(id) ON DELETE CASCADE
 );
+
+
+
 
 
 CREATE TABLE pagamentos (

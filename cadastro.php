@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $user_id = $stmt->insert_id;
 
                 // Cria pagamento como "PAGO"
-                $valor = 0; // você pode definir valor do plano
+                $valor = 0; 
                 $data_pagamento = date("Y-m-d");
                 $status = "PAGO";
                 $metodo = "cartao";

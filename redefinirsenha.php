@@ -1,18 +1,17 @@
 <?php
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-header('Content-Type: application/json; charset=utf-8');
+header('Content-Type: application/json');
 include "conexao.php";
 
 $data = json_decode(file_get_contents("php://input"), true);
 $email = trim($data['email'] ?? '');
+$novaSenha = trim($data['novaSenha'] ?? '');
 
-if (empty($email)) {
-    echo json_encode(["error" => "E-mail é obrigatório."]);
+if (!$email || !$novaSenha) {
+    echo json_encode(["error" => "E-mail e nova senha são obrigatórios."]);
     exit;
 }
 
-$stmt = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
+$stmt = $conn->prepare("SELECT id FROM usuarios WHERE email=?");
 $stmt->bind_param("s", $email);
 $stmt->execute();
 $result = $stmt->get_result();
@@ -23,19 +22,10 @@ if ($result->num_rows === 0) {
 }
 
 $user = $result->fetch_assoc();
-$token = bin2hex(random_bytes(32));
-$tokenHash = hash('sha256', $token);
-$expires = date("Y-m-d H:i:s", strtotime("+1 hour"));
+$senhaHash = password_hash($novaSenha, PASSWORD_DEFAULT);
 
-$stmt = $conn->prepare("UPDATE usuarios SET reset_token_hash=?, reset_expires_at=? WHERE id=?");
-$stmt->bind_param("ssi", $tokenHash, $expires, $user['id']);
-$stmt->execute();
+$upd = $conn->prepare("UPDATE usuarios SET password=? WHERE id=?");
+$upd->bind_param("si", $senhaHash, $user['id']);
+$upd->execute();
 
-// Aqui, simulamos envio de e-mail (pode ser substituído por PHPMailer)
-$link = "http://localhost/seu_sistema/nova_senha.php?token=$token";
-$mensagem = "Para redefinir sua senha, acesse o link: $link";
-
-echo json_encode(["message" => "Simulação: link de recuperação enviado para $email"]);
-exit;
-
-?>
+echo json_encode(["message" => "Senha redefinida com sucesso!"]);

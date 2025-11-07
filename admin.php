@@ -67,7 +67,7 @@ $result_agendamentos = $conn->query($sql_agendamentos);
 </head>
 <body>
 
-<!-- Navbar -->
+
 <div class="navbar">
     <a href="index.php"><img class="logo" src="img/logopng.png" alt="Logo"></a>
     <h1>Painel do Administrador</h1>
@@ -129,10 +129,10 @@ $result_agendamentos = $conn->query($sql_agendamentos);
         <?php endwhile; ?>
     </table>
 
-    <!-- Agendamentos -->
+   
     <h2>Agendamentos</h2>
 
-    <!-- Form adicionar -->
+    
     <form method="POST" class="form-agendamento">
         <label for="aluno_id">Aluno:</label>
         <select name="aluno_id" required>
