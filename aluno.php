@@ -62,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmt = $conn->prepare("UPDATE agendamentos SET modalidade=?, data_aula=?, horario=? WHERE id=? AND aluno_id=?");
         $stmt->bind_param("sssii", $modalidade, $data_aula, $horario, $id, $user_id);
-        $msg_agendamento = $stmt->execute() ? "✏️ Agendamento atualizado!" : "❌ Erro ao atualizar.";
+        $msg_agendamento = $stmt->execute() ? "Agendamento atualizado!" : "❌ Erro ao atualizar.";
         $stmt->close();
     }
 
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $id = $_POST['id'];
         $stmt = $conn->prepare("DELETE FROM agendamentos WHERE id=? AND aluno_id=?");
         $stmt->bind_param("ii", $id, $user_id);
-        $msg_agendamento = $stmt->execute() ? "🗑️ Agendamento excluído." : "❌ Erro ao excluir.";
+        $msg_agendamento = $stmt->execute() ? "Agendamento excluído." : "❌ Erro ao excluir.";
         $stmt->close();
     }
 }

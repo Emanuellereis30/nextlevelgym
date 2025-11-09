@@ -63,6 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <title>Cadastro e Pagamento - NextLevelGym</title>
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/cadastro.css">
+<link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
 </head>
 
 <body>
