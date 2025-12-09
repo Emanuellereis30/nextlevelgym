@@ -24,4 +24,4 @@ Funcionalidades
 
 •	Painel do administrador
 
-•	Desenvolvido por Emanuelle Reis LinkedIn | GitHub
+•	Desenvolvido por Emanuelle Reis
