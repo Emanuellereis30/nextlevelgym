@@ -1,0 +1,159 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #000 0%, #111 100%);
+    color: #fff;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+}
+
+.form-container {
+    background: #111;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    animation: fadeIn 0.8s ease forwards;
+}
+
+h2 {
+    grid-column: span 2;
+    text-align: center;
+    margin-bottom: 25px;
+    color: #32CD32;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    color: #32CD32;
+    margin-bottom: 15px;
+    font-size: 20px;
+    grid-column: span 2;
+}
+
+
+input, select {
+    width: 200%;
+    padding: 12px 15px;
+    margin-bottom: 15px;
+    border-radius: 12px;
+    border: 2px solid #222;
+    background: #111;
+    color: #fff;
+    font-size: 16px;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input::placeholder {
+    color: #888;
+}
+
+input:focus, select:focus {
+    border: 2px solid #32CD32;
+    box-shadow: 0 0 8px #32CD32;
+    outline: none;
+}
+
+
+button {
+    grid-column: span 2;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #32CD32 0%, #28a428 100%);
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #28a428 0%, #1fa01f 100%);
+    color: #fff;
+    transform: scale(1.05);
+}
+
+.msg {
+    grid-column: span 2;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Botão X no canto superior direito */
+.btn-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: #f44336;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background 0.3s;
+    z-index: 10;
+}
+.btn-close:hover {
+    background-color: #d32f2f;
+}
+
+
+/* Botão de voltar mais visível */
+.btn-voltar {
+display: inline-block;
+margin-top: 10px;
+padding: 10px 20px;
+background-color: #32CD32;
+color: #000;
+font-weight: bold;
+border-radius: 12px;
+transition: background 0.3s, color 0.3s;
+}
+.btn-voltar:hover {
+background-color: #28a428;
+color: #fff;
+}
+.form-container {
+position: relative; /* necessário para o botão X */
+}
+
+
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(-20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+
+@media screen and (max-width: 768px){
+    .form-container {
+        grid-template-columns: 1fr;
+    }
+}

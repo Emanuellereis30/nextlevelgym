@@ -1,0 +1,347 @@
+body {
+    background: linear-gradient(180deg, #000 0%, #111 100%);
+    color: #fff;
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.area-login {
+    background: #0b0b0b;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.05);
+    width: 350px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.area-login:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px rgba(0, 255, 0, 0.1);
+}
+
+.area-login h2 {
+    color: #30c522;
+    margin-bottom: 25px;
+    font-size: 22px;
+}
+
+
+.area-login input[type="email"],
+.area-login input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #111;
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 14px;
+    outline: none;
+    box-shadow: inset 0 0 0 1px #222;
+    transition: box-shadow 0.2s ease;
+}
+
+.area-login input:focus {
+    box-shadow: inset 0 0 0 1px #22c52a;
+}
+
+
+.btn-primary {
+    width: 100%;
+    background: linear-gradient(90deg, #22c538, #16a329);
+    color: #000;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(90deg, #16a322, #158027);
+    transform: scale(1.03);
+}
+
+
+.botoes-extra {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-secundario {
+    color: #22c522;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.btn-secundario:hover {
+    color: #097918;
+}
+
+.area-senha {
+     position: relative;
+    margin-bottom: 25px;
+}
+
+.area-senha i {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #888;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.area-senha i:hover {
+    color: #22c55e;
+}
+
+.erro {
+    background-color: #ffdddd; 
+    color: #d8000c;            
+    border: 1px solid #d8000c;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.modal-fp {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-fp .modal-content {
+    background: #0b0b0b;
+    padding: 30px;
+    border-radius: 15px;
+    width: 320px;
+    text-align: center;
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.05);
+}
+
+.modal-fp h3 {
+    color: #30c522;
+    margin-bottom: 15px;
+}
+
+.modal-fp input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    border: none;
+    background: #111;
+    color: #fff;
+    outline: none;
+    box-shadow: inset 0 0 0 1px #222;
+}
+
+.modal-fp input:focus {
+    box-shadow: inset 0 0 0 1px #22c52a;
+}
+
+.modal-fp .modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.modal-fp .modal-buttons button {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.modal-fp .btn-cancel {
+    background: #555;
+    color: #fff;
+}
+
+.modal-fp .btn-cancel:hover {
+    background: #333;
+}
+
+.modal-fp .btn-send {
+    background: linear-gradient(90deg, #22c538, #16a329);
+    color: #000;
+}
+
+.modal-fp .btn-send:hover {
+    background: linear-gradient(90deg, #16a322, #158027);
+}
+
+.modal-fp .msg {
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #30c522;
+}
+
+
+.modal-fp { 
+    display:none; 
+    position:fixed; inset:0; 
+    background:rgba(0,0,0,0.7); 
+    justify-content:center; 
+    align-items:center; 
+    z-index:1000; 
+}
+
+.modal-fp .modal-content {
+     background:#111; 
+     padding:30px; 
+     border-radius:15px; 
+     width:300px; 
+     text-align:center; 
+}
+
+.modal-fp input { 
+    width:100%; 
+    padding:10px; 
+    margin:8px 0; 
+    border-radius:8px; 
+    border:none; 
+    background:#1c1c1c; 
+    color:#03ff03; 
+}
+
+.modal-fp button { 
+    margin-top:10px; 
+    padding:10px 20px; 
+    border:none; 
+    border-radius:10px; 
+    cursor:pointer; 
+    background:#2bfa02f1; 
+    color:#000; 
+    font-weight:bold; 
+}
+
+.message { 
+    margin-top:10px; 
+    color:#2bfa02f1; 
+}
+
+.erro { 
+    color:#ff5555; 
+}
+
+
+@media (max-width: 400px) {
+    .area-login {
+        width: 90%;
+        padding: 30px 25px;
+    }
+}
+
+
+/* para aparecer a area do admin e professor */
+
+.advanced-access {
+    position: relative;
+    margin-top: 5px;
+    text-align: center;
+}
+
+#access-btn {
+    background: transparent;
+    border: none;
+    color: #22c522;
+    font-size: 14px;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+#access-btn:hover {
+    color: #0aff2f;
+}
+
+.access-dropdown {
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #0d0d0d;
+    padding: 10px 0;
+    border-radius: 10px;
+    width: 180px;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.08);
+    z-index: 20;
+}
+
+.access-dropdown a {
+    display: block;
+    padding: 10px 0;
+    color: #22c522;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.access-dropdown a:hover {
+    background: #131313;
+    color: #0aff2f;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+.botoes-extra .btn-primary {
+    width: 100%;
+    text-align: center;
+    padding: 12px;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #22c538, #16a329);
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.botoes-extra .btn-primary:hover {
+    background: linear-gradient(90deg, #16a322, #158027);
+    transform: scale(1.03);
+}
+
+/* esqueci minha senha*/
+.forgot-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: -10px;
+    margin-bottom: 15px;
+}
+
+.esqueci-senha {
+    font-size: 13px;
+    color: #22c522;
+    text-decoration: none;
+}
+
+.esqueci-senha:hover {
+    color: #0aff2f;
+}

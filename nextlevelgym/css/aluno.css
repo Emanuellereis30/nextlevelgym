@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #111; 
+    color: #eee; 
+    line-height: 1.6;
+}
+
+.header {
+    background-color: #000;
+    color: #00ff15;
+    padding: 20px 40px;
+    display: flex;
+    align-items: center;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #00ff15;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.header .logo-img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 10px;
+}
+
+.header .logo span strong {
+    color: #00ff15;
+}
+
+.area-aluno {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.card-unico {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 10px 30px rgba(0, 255, 0, 0.3);
+}
+
+.card-unico h2 {
+    color: #00ff15;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.secao {
+    margin-bottom: 25px;
+}
+
+.secao h3 {
+    color: #00ff15;
+    margin-bottom: 10px;
+}
+
+.secao p, .secao li {
+    color: #eee;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.secao ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.secao ul li::before {
+    content: "•";
+    color: #00ff15;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #00ff15;
+    color: #000;
+    font-weight: bold;
+    border-radius: 8px;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #009900;
+    color: #fff;
+}
+
+.secao input[type="text"], .form-agendar select, .form-editar select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #01c011;
+    outline: none;
+    background-color: #222;
+    color: #eee;
+    transition: all 0.3s;
+}
+
+.secao input[type="text"]:focus, .form-agendar select:focus, .form-editar select:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00ff15;
+}
+
+.checkin-msg {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #00ff15;
+}
+
+@media(max-width: 768px){
+    .card-unico {
+        padding: 20px;
+    }
+}
+
+.agendamentos {
+    background: #1a1a1a;
+    border: 1px solid #016109;
+    border-radius: 12px;
+    padding: 25px;
+    box-shadow: 0 0 10px rgba(0,255,20,0.1);
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+.agendamentos:hover {
+    box-shadow: 0 0 15px rgba(0,255,50,0.25);
+}
+
+.form-agendar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.form-group {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+}
+
+.form-agendar input, .form-agendar select {
+    background: #111;
+    border: 1px solid #01c011;
+    color: #eee;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.form-agendar input:focus, .form-agendar select:focus {
+    outline: none;
+    box-shadow: 0 0 10px #00ff15;
+}
+
+.btn-primary {
+    background: #00ff15;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.btn-primary:hover {
+    background: #00cc12;
+    transform: scale(1.03);
+}
+
+.lista-agendamentos {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.agendamento-item {
+    background: #111;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+.agendamento-item:hover {
+    border-color: #009e0d;
+}
+
+.agendamento-info {
+    margin-bottom: 8px;
+}
+.agendamento-info strong {
+    color: #00ff15;
+}
+
+.form-editar {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 8px;
+}
+
+.form-editar input, .form-editar select {
+    background: #1a1a1a;
+    border: 1px solid #00ff15;
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+.botoes-editar {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-acao {
+    padding: 6px 12px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-acao.editar {
+    background: #02ff179a;
+    color: #ffffff;
+}
+.btn-acao.editar:hover {
+    background: #01fc15;
+}
+
+.btn-acao.excluir {
+    background: rgba(255, 1, 1, 0.534);
+    color: #fff;
+}
+.btn-acao.excluir:hover {
+    background: rgb(235, 0, 0);
+}
+
+.sem-agendamento {
+    text-align: center;
+    color: #aaa;
+    font-style: italic;
+}
+
+.card-status {
+    background-color: #222;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 15px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+.card-status.pago { background-color: #4CAF50; }
+.card-status.pendente { background-color: #FF9800; }
+.card-status.atrasado { background-color: #F44336; }

@@ -1,0 +1,57 @@
+body {
+  background: #0b0b0b;
+  color: #fff;
+  font-family: "Nunito", sans-serif;
+}
+.area-login {
+  max-width: 380px;
+  margin: 80px auto;
+  padding: 40px;
+  background: #111;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.6);
+  text-align: center;
+}
+.area-login h2 {
+  color: #2bfa02f1;
+  margin-bottom: 20px;
+}
+.area-login input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: none;
+  background: #1c1c1c;
+  color: #fff;
+}
+.area-login button {
+  background: #2bfa02f1;
+  color: #000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.area-login button:hover {
+  background: #22c702;
+}
+.erro {
+  color: #ff5555;
+  margin-bottom: 10px;
+}
+.sucesso {
+  color: #2bfa02f1;
+  margin-bottom: 10px;
+}
+.voltar {
+  display: inline-block;
+  margin-top: 15px;
+  color: #999;
+  text-decoration: none;
+}
+.voltar:hover {
+  color: #2bfa02f1;
+}
